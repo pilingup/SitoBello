@@ -1,0 +1,43 @@
+site_name: My Docs
+site_url: https://peppe.brescia.com/ciao
+theme:
+  name: material
+  palette:
+
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Michael Jackson ind o svilupp
+
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Michael Jackson quann è muort
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - search
+  - tags:
+      tags_file: tags.md
+
+nav:
+  - Home: index.md
+  - About:
+    - About Me: about/about.md
+    - Sciroppo: about/sciroppocadebassocome.md
+  - Tags: tags.md
