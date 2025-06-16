@@ -22,21 +22,26 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install deps
+      - name: Install dependencies
         run: pip install mkdocs mkdocs-material
 
-      - name: Build
+      - name: Build MkDocs
         run: mkdocs build
 
-      - name: Upload site as artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload site content
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./site
 
-      environment:
-        name: github-pages
+  deploy:
+    needs: build-deploy
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v4
+    # 👉 LA PARTE CHE TI MANCAVA:
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
