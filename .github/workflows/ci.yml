@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,16 +28,16 @@ jobs:
       - name: Build MkDocs
         run: mkdocs build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload site content
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
           path: ./site
 
   deploy:
-    needs: build
+    needs: build-deploy
     runs-on: ubuntu-latest
 
+    # 👉 LA PARTE CHE TI MANCAVA:
     environment:
       name: github-pages
 
