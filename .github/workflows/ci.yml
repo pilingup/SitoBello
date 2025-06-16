@@ -25,7 +25,8 @@ jobs:
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4 #favijjjjjjjj so cosi ubriacaaaaaaaaaa
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages        # branch dove fare deploy
-          folder: site            # cartella buildata da mkdocs
+          branch: gh-pages
+          folder: site
+          token: ${{ secrets.GITHUB_TOKEN }}
