@@ -29,4 +29,4 @@ jobs:
         with:
           branch: gh-pages
           folder: site
-          token: ${{ secrets.GITHUB_TOKEN }} ##fo
+          token: ${{ secrets.GITHUB_TOKEN }} ##foda
